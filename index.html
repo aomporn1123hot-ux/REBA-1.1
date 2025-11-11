@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>REBA Full Assessment (กล้องหลัง)</title>
+  <title>REBA Full Assessment (สลับกล้อง)</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
@@ -24,6 +24,7 @@
           <option value="เดิน">เดิน</option>
         </select>
       </label>
+      <button id="switchCameraBtn">สลับกล้อง</button>
     </div>
 
     <video id="video" autoplay playsinline></video>
@@ -36,7 +37,6 @@
 
     <button id="startBtn">เริ่มประเมิน</button>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
