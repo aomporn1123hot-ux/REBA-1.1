@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>REBA Posture Assessment (กล้องหลัง)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REBA Full Assessment (กล้องหลัง)</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>REBA Posture Assessment (กล้องหลัง)</h1>
+    <h1>REBA Full Assessment</h1>
+
+    <div class="controls">
+      <label>น้ำหนักวัตถุ (กก.) 
+        <input type="number" id="weight" value="0" min="0" max="50">
+      </label>
+      <label>กิจกรรม
+        <select id="activity">
+          <option value="none">เลือกกิจกรรม</option>
+          <option value="ยกของ">ยกของ</option>
+          <option value="ก้ม">ก้ม</option>
+          <option value="เดิน">เดิน</option>
+        </select>
+      </label>
+    </div>
+
     <video id="video" autoplay playsinline></video>
     <canvas id="output"></canvas>
 
@@ -21,6 +36,7 @@
 
     <button id="startBtn">เริ่มประเมิน</button>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
