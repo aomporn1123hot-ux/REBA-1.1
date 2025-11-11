@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Demo: REBA Posture Assessment</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- MediaPipe Pose (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5/pose.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.5/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.5/drawing_utils.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>REBA — Real-time Posture Assessment (Prototype)</h1>
+
+    <div class="video-wrap">
+      <video id="video" autoplay muted playsinline></video>
+      <canvas id="overlay"></canvas>
+    </div>
+
+    <div class="results">
+      <div class="score">
+        <div>REBA Score</div>
+        <div id="rebaScore" class="big">—</div>
+        <div id="riskLabel">—</div>
+      </div>
+
+      <div class="details">
+        <h3>รายละเอียด (มุมและคะแนนย่อย)</h3>
+        <ul id="detailList">
+          <li>Neck angle: <span id="neckAngle">—</span>° (score <span id="neckScore">—</span>)</li>
+          <li>Trunk angle: <span id="trunkAngle">—</span>° (score <span id="trunkScore">—</span>)</li>
+          <li>Legs angle: <span id="legAngle">—</span>° (score <span id="legScore">—</span>)</li>
+          <li>Upper arm: <span id="upperArmAngle">—</span>° (score <span id="upperArmScore">—</span>)</li>
+          <li>Lower arm: <span id="lowerArmAngle">—</span>° (score <span id="lowerArmScore">—</span>)</li>
+          <li>Wrist: <span id="wristAngle">—</span>° (score <span id="wristScore">—</span>)</li>
+        </ul>
+        <div class="controls">
+          <label><input type="checkbox" id="forceCheckbox"> มีแรง/น้ำหนักหรือแรงกระแทก (Force/Load)</label>
+          <label><input type="checkbox" id="couplingCheckbox"> การจับ/การยึด (Poor coupling)</label>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">หมายเหตุ: ผลลัพธ์เป็นค่าโดยประมาณ — ควรให้ผู้เชี่ยวชาญยืนยันก่อนใช้ตัดสินใจ.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
